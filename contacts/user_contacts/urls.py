@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, url
 
-from UserContacts.views import *
+from user_contacts.views import *
 
 urlpatterns = patterns('',
 	url(r'^$', home),

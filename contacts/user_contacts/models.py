@@ -1,5 +1,5 @@
 from django.db import models
-from UserContacts.validators import validate_string, validate_number
+from user_contacts.validators import validate_string, validate_number
 
 class Person(models.Model):
     first_name = models.CharField(max_length = 30, validators = [validate_string])

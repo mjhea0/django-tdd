@@ -1,7 +1,7 @@
 from django.template.loader import render_to_string
 from django.test import TestCase, Client
-from UserContacts.models import Person, Phone
-from UserContacts.views import *
+from user_contacts.models import Person, Phone
+from user_contacts.views import *
 
 class ViewTest(TestCase):
     def setUp(self):

@@ -54,9 +54,9 @@ class AdminTest(LiveServerTestCase):
         password_field = self.browser.find_element_by_name('password')
         password_field.send_keys('admin')
         password_field.send_keys(Keys.RETURN)
-        # user verifies that UserContacts is present
+        # user verifies that User_Contacts is present
         body = self.browser.find_element_by_tag_name('body')
-        self.assertIn('Usercontacts', body.text)
+        self.assertIn('User_Contacts', body.text)
         # user clicks on the Persons link
         persons_links = self.browser.find_elements_by_link_text('Persons')
         persons_links[0].click()

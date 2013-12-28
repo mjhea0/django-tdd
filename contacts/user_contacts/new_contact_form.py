@@ -1,8 +1,8 @@
 import re
 from django import forms
 from django.core.exceptions import ValidationError
-from UserContacts.models import Person, Phone
-from UserContacts.validators import validate_string, validate_number
+from user_contacts.models import Person, Phone
+from user_contacts.validators import validate_string, validate_number
 
 class ContactForm(forms.Form):
     first_name = forms.CharField(max_length=30, validators = [validate_string])
