@@ -7,4 +7,3 @@ class TestContactForm(TestCase):
         form = ContactForm({'first_name':'test', 'last_name':'test','number':'9999900000'})
         contact = form.save()
         self.assertEqual(contact.person.first_name, 'test')
-

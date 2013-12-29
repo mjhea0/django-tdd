@@ -11,6 +11,3 @@ class ValidatorTest(TestCase):
         with self.assertRaises(ValidationError):
             validate_number('123ABC')
             validate_number('75431#')
-
-
-

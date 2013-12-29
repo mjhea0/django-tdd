@@ -13,7 +13,6 @@ class ContactForm(forms.Form):
     state = forms.CharField(required=False, validators = [validate_string])
     country = forms.CharField(required=False)
     number = forms.CharField(max_length=10, validators = [validate_number])
-
     def save(self):
         if self.is_valid():
             data = self.cleaned_data

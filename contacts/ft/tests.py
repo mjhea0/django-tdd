@@ -1,13 +1,3 @@
-### old unit test ###
-# from django.test import TestCase
-
-# class AdminViewTest(TestCase):
-#     def test_admin(self):
-#         response = self.client.get('/admin/', content_type='html/text')
-#         self.assertEqual(response.status_code, 200)
-#         self.assertContains(response, 'Django administration')
-
-### new functional test ###
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
@@ -15,12 +5,11 @@ from django.test import LiveServerTestCase
 
 class AdminTest(LiveServerTestCase):
 
-	# load fixtures
+    # load fixtures
     fixtures = ['admin.json']
 
     def setUp(self):
         self.browser = webdriver.Firefox()
-        self.browser.implicitly_wait(3)
 
     def tearDown(self):
         self.browser.quit()
@@ -42,19 +31,18 @@ class AdminTest(LiveServerTestCase):
         # user clicks on the Users link
         user_link = self.browser.find_elements_by_link_text('Users')
         user_link[0].click()
-        # user verifies that ad@min.com is present 
+        # user verifies that user live@forever.com is present
         body = self.browser.find_element_by_tag_name('body')
-        self.assertIn('ad@min.com', body.text)
+        self.assertIn('live@forever.com', body.text)
 
-    def test_create_contact_admin(self):
-        # user opens web browser, navigates to admin page, and logs in    
+    def test_create_contact_admin(self):    
         self.browser.get(self.live_server_url + '/admin/')
         username_field = self.browser.find_element_by_name('username')
         username_field.send_keys('admin')
         password_field = self.browser.find_element_by_name('password')
         password_field.send_keys('admin')
         password_field.send_keys(Keys.RETURN)
-        # user verifies that User_Contacts is present
+        # user verifies that user_contacts is present
         body = self.browser.find_element_by_tag_name('body')
         self.assertIn('User_Contacts', body.text)
         # user clicks on the Persons link
@@ -88,8 +76,8 @@ class AdminTest(LiveServerTestCase):
         # user finds the person in the dropdown
         el = self.browser.find_element_by_name("person")
         for option in el.find_elements_by_tag_name('option'):
-            if option.text == 'Herman, Michael':
-                option.click()
+          if option.text == 'Herman, Michael':
+              option.click()
         # user adds the phone numbers
         self.browser.find_element_by_name('number').send_keys("4158888888")
         # user clicks the save button
@@ -178,4 +166,3 @@ class UserContactTest(LiveServerTestCase):
         self.browser.find_element_by_css_selector("input[value='Add']").click()
         body = self.browser.find_element_by_tag_name('body')
         self.assertIn('Invalid', body.text)
-

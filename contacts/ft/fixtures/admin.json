@@ -9,12 +9,30 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-11-24T03:50:24.028Z", 
+    "last_login": "2013-12-29T03:49:13.545Z", 
     "groups": [], 
     "user_permissions": [], 
-    "password": "pbkdf2_sha256$10000$6YlVJ6pUIpNn$OL802Q8fBGMdLGBrrzsoea5WARQgGi4CmNFXvQlnYKQ=", 
+    "password": "pbkdf2_sha256$12000$VtsgwjQ1BZ6u$zwnG+5E5cl8zOnghahArLHiMC6wGk06HXrlAijFFpSA=", 
     "email": "ad@min.com", 
-    "date_joined": "2013-11-24T00:02:59.119Z"
+    "date_joined": "2013-12-29T03:49:13.545Z"
+  }
+},
+{
+  "pk": 2, 
+  "model": "auth.user", 
+  "fields": {
+    "username": "live", 
+    "first_name": "", 
+    "last_name": "", 
+    "is_active": true, 
+    "is_superuser": false, 
+    "is_staff": false, 
+    "last_login": "2013-12-29T03:49:13.545Z", 
+    "groups": [], 
+    "user_permissions": [], 
+    "password": "pbkdf2_sha256$12000$VtsgwjQ1BZ6u$zwnG+5E5cl8zOnghahArLHiMC6wGk06HXrlAijFFpSA=", 
+    "email": "live@forever.com", 
+    "date_joined": "2013-12-29T03:49:13.545Z"
   }
 }
 ]

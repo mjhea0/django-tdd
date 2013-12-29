@@ -17,7 +17,9 @@ def add(request):
 
 def create(request):
     form = ContactForm(request.POST)
-    if form.is_valid() :
+    if form.is_valid():
         form.save()
         return HttpResponseRedirect('all/')
     return render(request, 'add.html', {'person_form' : form}, context_instance = RequestContext(request))
+
+
