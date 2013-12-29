@@ -7,3 +7,7 @@ class TestContactForm(TestCase):
         form = ContactForm({'first_name':'test', 'last_name':'test','number':'9999900000'})
         contact = form.save()
         self.assertEqual(contact.person.first_name, 'test')
+    def test_if_invalid_contact_is_not_saved(self):
+        form = ContactForm({'first_name':'tes&t', 'last_name':'test','number':'9999900000'})
+        contact = form.save()
+        self.assertEqual(contact, None)
