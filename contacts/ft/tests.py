@@ -91,7 +91,7 @@ class AdminTest(LiveServerTestCase):
         self.assertIn('Thanks for spending some quality time with the Web site today.', body.text)
 
     def test_create_contact_admin_raise_error(self): 
-        # # user opens web browser, navigates to admin page, and logs in    
+        # user opens web browser, navigates to admin page, and logs in    
         self.browser.get(self.live_server_url + '/admin/')
         username_field = self.browser.find_element_by_name('username')
         username_field.send_keys('admin')
